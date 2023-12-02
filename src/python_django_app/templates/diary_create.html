@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MyDiaryApp</title>
+  </head>
+  <body>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">投稿</button>
+    </form>
+    <a href="{% url 'diary:index' %}">TOPに戻る</a>
+  </body>
+</html>

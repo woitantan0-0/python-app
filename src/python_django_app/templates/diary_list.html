@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MyDiaryApp</title>
+  </head>
+  <body>
+    {% for diary in diary_list %}
+    <p>
+      {{ diary.date }}
+      <a href="{% url 'diary:diary_detail' diary.pk %}">{{ diary.title }}</a> /
+      <a href="{% url 'diary:diary_update' diary.pk %}">編集</a> /
+      <a href="{% url 'diary:diary_delete' diary.pk %}">削除</a>
+    </p>
+    {% endfor %}
+    <a href="{% url 'diary:index' %}">TOPに戻る</a>
+  </body>
+</html>
